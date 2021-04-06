@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,3 +33,9 @@ Route::get('/contact', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home/{id}', [App\Http\Controllers\HomeController::class, 'show']);
+Route::get('admin', [App\Http\Controllers\AdminController::class, 'index']);
+
+//Route::resource('posts',PostController::class);
+//Route::resource('users',UserController::class);
+
