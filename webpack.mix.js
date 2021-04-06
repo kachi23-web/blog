@@ -11,10 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
-
- mix.sass('resources/sass/app.scss', 'public/css')
- .sass('resources/sass/admin/sb-admin.scss', 'public/css/admin');
-
 mix.js('resources/js/app.js', 'public/js')
-    .vue();
-    
+.js('resources/js/admin/sb-admin.js', 'public/js/admin')
+    .vue()
+    .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/admin/sb-admin.scss', 'public/css/admin')
+    .sourceMaps();
