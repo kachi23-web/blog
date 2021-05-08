@@ -35,6 +35,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Route::get('/home/{id}', [App\Http\Controllers\HomeController::class, 'show']);
 Route::get('admin', [App\Http\Controllers\AdminController::class, 'index']);
+Route::get('posts', [App\Http\Controllers\AdminController::class, 'posts']);
 
 //Route::resource('posts',PostController::class);
 //Route::resource('users',UserController::class);
