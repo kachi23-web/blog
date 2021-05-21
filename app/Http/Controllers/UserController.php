@@ -15,10 +15,10 @@ class UserController extends Controller
     public function index()
     {
         //getting all the users from the db
-        //$users = User::orderBy ('id','desc')->get();
+        $users = User::orderBy ('id','desc')->get();
 
         //sending the users data to the view
-       // return view('admin.users.index',['users' =>$users]);
+        return view('admin.users.index',['users' =>$users]);
     }
 
     /**

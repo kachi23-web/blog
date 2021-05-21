@@ -20,6 +20,9 @@
   <!-- Custom styles for this template-->
   <link href="/css/admin/sb-admin.css" rel="stylesheet">
 
+  <!--CK Editor Plugin-->
+  <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -177,6 +180,7 @@
 
   <!-- Core plugin JavaScript-->
   <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
 
   <!-- Page level plugin JavaScript-->
   <script src="/vendor/chart.js/Chart.min.js"></script>

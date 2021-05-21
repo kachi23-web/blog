@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
@@ -34,9 +35,18 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Route::get('/home/{id}', [App\Http\Controllers\HomeController::class, 'show']);
-Route::get('admin', [App\Http\Controllers\AdminController::class, 'index']);
-Route::get('posts', [App\Http\Controllers\AdminController::class, 'posts']);
+Route::get('admin', [AdminController::class, 'index']);
 
-//Route::resource('posts',PostController::class);
+
+//posts Route
+/* Route::get('posts', [PostsController::class, 'index']);
+Route::get('posts/create', [PostsController::class, 'create']);
+Route::get('posts/{post}', [PostsController::class, 'show']);
+Route::post('posts/', [PostsController::class, 'store']);
+Route::get('posts/{post}/edit', [PostsController::class, 'edit']);
+Route::patch('posts/{post}', [PostsController::class, 'update']);
+Route::delete('posts/{post}', [PostsController::class, 'destroy']); */
+
+Route::resource('posts',PostsController::class);
 //Route::resource('users',UserController::class);
 

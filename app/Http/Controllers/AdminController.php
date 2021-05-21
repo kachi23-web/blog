@@ -16,8 +16,8 @@ class AdminController extends Controller
     }
 
 
-    public function posts(){
-        return view('admin.posts');
-    }
+    // public function posts(){
+    //     return view('admin.posts');
+    // }
 
 }
