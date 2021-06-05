@@ -6,9 +6,14 @@ use App\Models\Post;
 use App\Models\User;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class PostsController extends Controller
 {
+
+    public function _construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -51,24 +56,44 @@ class PostsController extends Controller
          //validate the field
         $data = request()->validate([
             'title' => 'required|unique:posts|max:255',
-            'image'=> 'required|image',
+            'image'=> 'required|mimes:jpg,png,jpeg|max:5045',
             'post_content'=>'required',
         ]);
-        
-         $user= auth()->user(); 
-          //$user = new User();
+        //get the image from the form
+        $fileNameWithTheExtension = request('image')->getClientOriginalName();
 
-        //dd($user->id);
+
+        //get the image from the form
+        $fileName = pathinfo($fileNameWithTheExtension,PATHINFO_FILENAME);
+
+        //get extension of the file
+        $extension = request('image')->getClientOriginalExtension();
+
+        //create a new for the file using the timestamp
+        $newFileName = $fileName . '_' . time().'.' . $extension;
+
+        //save the image onto a public directory into a separately folder
+       // $path = request('image')->storeAs('public/images/posts_images',$newFileName);
         
+        $request->image->move(public_path('images/posts_images'),$newFileName); 
+       // dd($extension);d
+
+
+    
+      //  $user= auth()->user(); 
+       // dd($user->id); $id = Auth::id();
+       // $user= Auth::user();
         $post = new Post();
 
         $post->title =$request->input('title');
         $post->content = request('post_content');
-        $post->image_url = 'image_test';
-        $post->userId = $user->id;
+        $post->image_url = $newFileName;
+        $post->userId =  Auth::id() ;
+
+       // $post->userId = $user->id;
 
         $post->save();
-       return redirect ('admin/posts'); 
+       return redirect ('/posts')->with('success','Post Successfully created !!!'); 
     }
 
 
@@ -91,7 +116,11 @@ class PostsController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        //get the post with the id $post->idate
+        $post = Post::find($post->id);
+
+        //return view
+        return view ('admin/posts/edit',['post'=>$post]);  
     }
 
     /**
@@ -104,7 +133,46 @@ class PostsController extends Controller
     public function update(Request $request, Post $post)
     {
         //
+        //dd($post->id);
+
+        $data = request()->validate([
+            'title' => 'required|max:255',
+            'image'=> 'required|mimes:jpg,png,jpeg|max:5045',
+            'post_content'=>'required',
+        ]);
+        //get the image from the form
+        $fileNameWithTheExtension = request('image')->getClientOriginalName();
+
+
+        //get the image from the form
+        $fileName = pathinfo($fileNameWithTheExtension,PATHINFO_FILENAME);
+
+        //get extension of the file
+        $extension = request('image')->getClientOriginalExtension();
+
+        //create a new for the file using the timestamp
+        $newFileName = $fileName . '_' . time().'.' . $extension;
+
+       
+        
+        $request->image->move(public_path('images/posts_images'),$newFileName); 
+      
+
+    
+      
+        $post =  Post::findOrFail($post->id);
+
+        $post->title =request('title');
+        $post->content = request('post_content');
+        $post->image_url = $newFileName;
+       
+
+       // $post->userId = $user->id;
+
+        $post->save();
+       return redirect ('/posts')->with('success','Post Successfully created !!!'); 
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -112,14 +180,18 @@ class PostsController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Request $request )
     {
+
+       
         //find the post
-        $post = Post::find($request->post);
+        $post = Post::find($request->post_id);
+        
+        $oldImage = public_path() .'/images/posts_images/'.$post->image_url;
 
-        $oldImage = public_path() .'/storage/images/posts_images/'.$post->image_url;
+        //dd($oldImage);
 
-        if(file_exists($old)){
+        if(file_exists($oldImage)){
             //delete the image
             unlink($oldImage);
 

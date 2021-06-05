@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,9 +21,9 @@ use App\Http\Controllers\UserController;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('/home');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/about', function () {
     return view('/about');
@@ -33,8 +34,8 @@ Route::get('/contact', function () {
 });
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//Route::get('/home/{id}', [App\Http\Controllers\HomeController::class, 'show']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home/{id}', [HomeController::class, 'show']);
 Route::get('admin', [AdminController::class, 'index']);
 
 
