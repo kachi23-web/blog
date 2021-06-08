@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostsController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RolesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,5 +50,6 @@ Route::patch('posts/{post}', [PostsController::class, 'update']);
 Route::delete('posts/{post}', [PostsController::class, 'destroy']); */
 
 Route::resource('posts',PostsController::class);
-//Route::resource('users',UserController::class);
+Route::resource('users',UsersController::class);
+Route::resource('roles',RolesController::class);
 

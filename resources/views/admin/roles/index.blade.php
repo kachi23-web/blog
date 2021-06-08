@@ -6,10 +6,10 @@
 
  <div class="row py-lg-2">
     <div class="col-md-6">
-        <h2>This is user List</h2>
+        <h2>This is Roles List</h2>
     </div>
     <div class="col-md-6">
-        <a href="/users/create" class="btn btn-primary btn-lg float-md-right" role="button" aria-pressed="true">Create New User</a>
+        <a href="/roles/create" class="btn btn-primary btn-lg float-md-right" role="button" aria-pressed="true">Create New User</a>
     </div>
 </div>
 
@@ -25,9 +25,8 @@
             <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Email</th>
                 <th>Role</th>
+                <th>Slug</th>
                 <th>Permissions</th>
                 <th>Tools</th>
             </tr>
@@ -35,25 +34,24 @@
             <tfoot>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Email</th>
                 <th>Role</th>
+                <th>Slug</th>
                 <th>Permissions</th>
                 <th>Tools</th>
             </tr>
             </tfoot>
             <tbody>
-                  @foreach ($users as $user)      
-              {{--  @if(!\Auth::user()->hasRole('admin') && $user->hasRole('admin')) @continue; @endif                          
-                <tr {{ Auth::user()->id == $user->id ? 'bgcolor=#ddd' : '' }}> --}}
-                    <td>{{$user['id']}}</td>
-                    <td>{{$user['name']}}</td>
-                    <td>{{$user['email']}}</td>
+                  @foreach ($roles as $role)      
+              {{--  @if(!\Auth::role()->hasRole('admin') && $role->hasRole('admin')) @continue; @endif                          
+                <tr {{ Auth::role()->id == $role->id ? 'bgcolor=#ddd' : '' }}> --}}
+                    <td>{{$role['id']}}</td>
+                    <td>{{$role['name']}}</td>
+                    <td>{{$role['email']}}</td>
                     <td>permissions</td>
                     <td>tools</td>
                     {{-- <td>
-                        @if ($user->roles->isNotEmpty())
-                            @foreach ($user->roles as $role)
+                        @if ($role->roles->isNotEmpty())
+                            @foreach ($role->roles as $role)
                                 <span class="badge badge-secondary">
                                     {{ $role->name }}
                                 </span>
@@ -62,9 +60,9 @@
 
                     </td>
                     <td>
-                        @if ($user->permissions->isNotEmpty())
+                        @if ($role->permissions->isNotEmpty())
                                         
-                            @foreach ($user->permissions as $permission)
+                            @foreach ($role->permissions as $permission)
                                 <span class="badge badge-secondary">
                                     {{ $permission->name }}                                    
                                 </span>
@@ -75,9 +73,9 @@
                 
                     
                       <td>
-                        <a href="/users/{{ $user['id'] }}"><i class="fa fa-eye"></i></a>
-                        <a href="/users/{{ $user['id'] }}/edit"><i class="fa fa-edit"></i></a>
-                        <a href="#" data-toggle="modal" data-target="#deleteModal" data-userid="{{$user['id']}}"><i class="fas fa-trash-alt"></i></a>
+                        <a href="/roles/{{ $role['id'] }}"><i class="fa fa-eye"></i></a>
+                        <a href="/roles/{{ $role['id'] }}/edit"><i class="fa fa-edit"></i></a>
+                        <a href="#" data-toggle="modal" data-target="#deleteModal" data-roleid="{{$role['id']}}"><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
                 @endforeach
@@ -94,13 +92,13 @@
                     <span aria-hidden="true">×</span>
                 </button>
                 </div>
-                <div class="modal-body">Select "delete" If you realy want to delete this user.</div>
+                <div class="modal-body">Select "delete" If you realy want to delete this role.</div>
                 <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                 <form method="POST" action="">
                     @method('DELETE')
                     @csrf
-                     <input type="hidden" id="user_id" name="user_id" value="">
+                     <input type="hidden" id="role_id" name="user_id" value="">
                      <a class="btn btn-primary" onclick="$(this).closest('form').submit();">Delete</a>
                 </form>
                 </div>

@@ -24,10 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-
+     
        //return view('welcome');
         $posts = Post::orderBy('id','desc')->simplePaginate(3);
-
+     
         return view('welcome',['posts'=> $posts]);
     }
     // show the post identified by the $id

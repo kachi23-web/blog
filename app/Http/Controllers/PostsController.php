@@ -23,6 +23,7 @@ class PostsController extends Controller
     {
        
         //return $post;
+        
         return view('admin.posts.index')
         ->with('posts',Post::orderBy('updated_at', 'DESC')->get()); 
 

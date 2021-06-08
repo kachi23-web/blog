@@ -98,16 +98,20 @@
           <span>Dashboard</span>
         </a>
       </li>
-      
       <li class="nav-item">
-        <a class="nav-link" href="/posts">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Posts</span></a>
+        <a class="nav-link" href="/roles">
+          <i class="fas fa-fw fa-unlock-alt"></i>
+          <span>Roles</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/users">
           <i class="fas fa-fw fa-table"></i>
           <span>Users</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/posts">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Posts</span></a>
       </li>
     </ul>
 
@@ -187,6 +191,8 @@
   <script src="/js/admin/demo/datatables-demo.js"></script>
   <script src="/js/admin/demo/chart-area-demo.js"></script>
   @yield('js_post_page')
+  @yield('js_user_page') 
+  @yield('js_role_page') 
 
 </body>
 
