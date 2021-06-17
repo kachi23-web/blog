@@ -14,28 +14,26 @@
         </div>
         @endif
 
-<form method="POST" action="/users/{{ $user->id }}" enctype="multipart/form-data" >
+<form method="POST" action="/roles/{{ $role->id }}" enctype="multipart/form-data" >
     @method('PATCH')
     @csrf()
     {{ csrf_field() }}
+    <h1>Update Role</h1>
+    <div class="form-group">
+        <label for="role_name">Role name</label>
+        <input type="text" name="role_name" class="form-control" id="name" placeholder="Name..." value="{{ $role->name }}" required>
+    </div>
+    <div class="form-group">
+        <label for="role_slug">Role Slug</label>
+        <input type="text" name="role_slug" class="form-control" id="slug" placeholder="Slug..." value="{{ $role->slug }}">
+    </div>
+    <div class="form-group">
+        <label for="roles_permission">Add Permissions</label>
+        <input type="text" data-role="tagsinput" name="roles_permission" class="form-control" id="roles_permission" value="" required>
+    </div>
     
-    <div class="form-group">
-        <label for="name">User name</label>
-        <input type="text" name="name" class="form-control" id="name" placeholder="Name..." value="{{ $user->name }}" required>
-    </div>
-    <div class="form-group">
-        <label for="name">Email</label>
-        <input type="text" name="email" class="form-control" id="email" placeholder="Email..." value="{{ $user->email }}">
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" name="password" class="form-control" id="password" value="{{$user->password }}" placeholder="Password." minlength="8">
-    </div>
-    <div class="form-group">
-        <label for="password_confirmation">Password Confirm</label>
-        <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" value="{{$user->password_confirmation }}" placeholder="Password..." minlength="8">
-    </div>
     <div class="form-group pt-2">
         <input class="btn btn-primary" type="submit" value="submit">
     </div>
 @endsection
+{{-- {{$role->roles_permission }} --}}

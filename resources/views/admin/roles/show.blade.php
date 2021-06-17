@@ -7,8 +7,8 @@
  <div class="container">
     <div class="card">
     <div class="card-header">
-        <h3>Name: {{ $user->name }}</h3>
-        <h4>Email: {{ $user->email }}</h4>
+        <h3>Name: {{ $role->name }}</h3>
+        <h4>Email: {{ $role->slug }}</h4>
         <h4>Number of Posts: .....</h4>
     </div>
     <div class="card-body">

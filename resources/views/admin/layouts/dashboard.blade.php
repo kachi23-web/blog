@@ -119,6 +119,8 @@
 
     <div class="container-fluid">
   
+      @yield('css_role_page')
+
       @yield('content')
 
     <!-- /.container-fluid -->

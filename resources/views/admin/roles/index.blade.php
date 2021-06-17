@@ -9,7 +9,7 @@
         <h2>This is Roles List</h2>
     </div>
     <div class="col-md-6">
-        <a href="/roles/create" class="btn btn-primary btn-lg float-md-right" role="button" aria-pressed="true">Create New User</a>
+        <a href="/roles/create" class="btn btn-primary btn-lg float-md-right" role="button" aria-pressed="true">Create New role</a>
     </div>
 </div>
 
@@ -46,9 +46,9 @@
                 <tr {{ Auth::role()->id == $role->id ? 'bgcolor=#ddd' : '' }}> --}}
                     <td>{{$role['id']}}</td>
                     <td>{{$role['name']}}</td>
-                    <td>{{$role['email']}}</td>
+                    <td>{{$role['slug']}}</td>
                     <td>permissions</td>
-                    <td>tools</td>
+                    
                     {{-- <td>
                         @if ($role->roles->isNotEmpty())
                             @foreach ($role->roles as $role)
@@ -87,7 +87,7 @@
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Are you shure you want to delete this?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this?</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -98,7 +98,7 @@
                 <form method="POST" action="">
                     @method('DELETE')
                     @csrf
-                     <input type="hidden" id="role_id" name="user_id" value="">
+                     <input type="hidden" id="role_id" name="role_id" value="">
                      <a class="btn btn-primary" onclick="$(this).closest('form').submit();">Delete</a>
                 </form>
                 </div>
@@ -109,7 +109,7 @@
     <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
 </div>
 
- @section('js_user_page')
+ @section('js_role_page')
 
 <script src="/vendor/chart.js/Chart.min.js"></script>
 <script src="/js/admin/demo/chart-area-demo.js"></script>
@@ -117,11 +117,11 @@
     <script>
         $('#deleteModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) 
-            var user_id = button.data('userid') 
+            var role_id = button.data('roleid') 
             
             var modal = $(this)
-            // modal.find('.modal-footer #user_id').val(user_id)
-            modal.find('form').attr('action','/users/' + user_id);
+            // modal.find('.modal-footer #role_id').val(role_id)
+            modal.find('form').attr('action','/roles/' + role_id);
         })
     </script> 
 
