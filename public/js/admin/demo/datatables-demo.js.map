@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./resources/js/admin/demo/datatables-demo.js"],"names":["$","document","ready","DataTable"],"mappings":"AACAA,EAAEC,UAAUC,OAAM,WAChBF,EAAE,cAAcG","file":"/js/admin/demo/datatables-demo.js","sourcesContent":["// Call the dataTables jQuery plugin\n$(document).ready(function() {\n  $('#dataTable').DataTable();\n});\n"],"sourceRoot":""}

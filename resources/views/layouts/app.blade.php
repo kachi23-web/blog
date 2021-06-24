@@ -29,10 +29,20 @@
 
 <body>
 
-  <!-- Navigation -->
+  @if(!\Request::is('login')&& !\Request::is('register'))
+    @include('partial.navbar')
+  @endif
+
+  @yield('content')
+
+  @if(!\Request::is('login') && !\Request::is('register'))
+    @include('partial.footer')
+  @endif
+
+  <!-- Navigation 
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'Blog') }}</a>
+      {{-- <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'Blog') }}</a> --}}
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -47,10 +57,10 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/contact">Contact</a>
-          </li>
+          </li>-->
 
- <!-- Authentication Links -->
- @guest
+ <!-- Authentication Links 
+{{--  @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -81,17 +91,17 @@
                                 </div>
                             </li>
                         @endguest
- 
+  --}}
 
         </ul>
       </div>
     </div>
-  </nav>
+  </nav>-->
 
 
 
 
-@yield('content')
+{{-- //@yield('content') --}}
 
 
 
@@ -105,7 +115,7 @@
 
 
   
-  <!-- Footer -->
+  <!-- Footer 
   <footer>
     <div class="container">
       <div class="row">
@@ -140,7 +150,7 @@
         </div>
       </div>
     </div>
-  </footer>
+  </footer>-->
 
   <!-- Bootstrap core JavaScript -->
   <script src="/vendor/jquery/jquery.min.js"></script>

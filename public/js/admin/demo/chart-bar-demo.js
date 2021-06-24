@@ -1,0 +1,32 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./resources/js/admin/demo/chart-bar-demo.js":
+/*!***************************************************!*\
+  !*** ./resources/js/admin/demo/chart-bar-demo.js ***!
+  \***************************************************/
+/***/ (() => {
+
+eval("// Set new default font family and font color to mimic Bootstrap's default styling\nChart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif';\nChart.defaults.global.defaultFontColor = '#292b2c'; // Bar Chart Example\n\nvar ctx = document.getElementById(\"myBarChart\");\nvar myLineChart = new Chart(ctx, {\n  type: 'bar',\n  data: {\n    labels: [\"January\", \"February\", \"March\", \"April\", \"May\", \"June\"],\n    datasets: [{\n      label: \"Revenue\",\n      backgroundColor: \"rgba(2,117,216,1)\",\n      borderColor: \"rgba(2,117,216,1)\",\n      data: [4215, 5312, 6251, 7841, 9821, 14984]\n    }]\n  },\n  options: {\n    scales: {\n      xAxes: [{\n        time: {\n          unit: 'month'\n        },\n        gridLines: {\n          display: false\n        },\n        ticks: {\n          maxTicksLimit: 6\n        }\n      }],\n      yAxes: [{\n        ticks: {\n          min: 0,\n          max: 15000,\n          maxTicksLimit: 5\n        },\n        gridLines: {\n          display: true\n        }\n      }]\n    },\n    legend: {\n      display: false\n    }\n  }\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvYWRtaW4vZGVtby9jaGFydC1iYXItZGVtby5qcz82MzdjIl0sIm5hbWVzIjpbIkNoYXJ0IiwiZGVmYXVsdHMiLCJnbG9iYWwiLCJkZWZhdWx0Rm9udEZhbWlseSIsImRlZmF1bHRGb250Q29sb3IiLCJjdHgiLCJkb2N1bWVudCIsImdldEVsZW1lbnRCeUlkIiwibXlMaW5lQ2hhcnQiLCJ0eXBlIiwiZGF0YSIsImxhYmVscyIsImRhdGFzZXRzIiwibGFiZWwiLCJiYWNrZ3JvdW5kQ29sb3IiLCJib3JkZXJDb2xvciIsIm9wdGlvbnMiLCJzY2FsZXMiLCJ4QXhlcyIsInRpbWUiLCJ1bml0IiwiZ3JpZExpbmVzIiwiZGlzcGxheSIsInRpY2tzIiwibWF4VGlja3NMaW1pdCIsInlBeGVzIiwibWluIiwibWF4IiwibGVnZW5kIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBQSxLQUFLLENBQUNDLFFBQU4sQ0FBZUMsTUFBZixDQUFzQkMsaUJBQXRCLEdBQTBDLGdHQUExQztBQUNBSCxLQUFLLENBQUNDLFFBQU4sQ0FBZUMsTUFBZixDQUFzQkUsZ0JBQXRCLEdBQXlDLFNBQXpDLEMsQ0FFQTs7QUFDQSxJQUFJQyxHQUFHLEdBQUdDLFFBQVEsQ0FBQ0MsY0FBVCxDQUF3QixZQUF4QixDQUFWO0FBQ0EsSUFBSUMsV0FBVyxHQUFHLElBQUlSLEtBQUosQ0FBVUssR0FBVixFQUFlO0FBQy9CSSxFQUFBQSxJQUFJLEVBQUUsS0FEeUI7QUFFL0JDLEVBQUFBLElBQUksRUFBRTtBQUNKQyxJQUFBQSxNQUFNLEVBQUUsQ0FBQyxTQUFELEVBQVksVUFBWixFQUF3QixPQUF4QixFQUFpQyxPQUFqQyxFQUEwQyxLQUExQyxFQUFpRCxNQUFqRCxDQURKO0FBRUpDLElBQUFBLFFBQVEsRUFBRSxDQUFDO0FBQ1RDLE1BQUFBLEtBQUssRUFBRSxTQURFO0FBRVRDLE1BQUFBLGVBQWUsRUFBRSxtQkFGUjtBQUdUQyxNQUFBQSxXQUFXLEVBQUUsbUJBSEo7QUFJVEwsTUFBQUEsSUFBSSxFQUFFLENBQUMsSUFBRCxFQUFPLElBQVAsRUFBYSxJQUFiLEVBQW1CLElBQW5CLEVBQXlCLElBQXpCLEVBQStCLEtBQS9CO0FBSkcsS0FBRDtBQUZOLEdBRnlCO0FBVy9CTSxFQUFBQSxPQUFPLEVBQUU7QUFDUEMsSUFBQUEsTUFBTSxFQUFFO0FBQ05DLE1BQUFBLEtBQUssRUFBRSxDQUFDO0FBQ05DLFFBQUFBLElBQUksRUFBRTtBQUNKQyxVQUFBQSxJQUFJLEVBQUU7QUFERixTQURBO0FBSU5DLFFBQUFBLFNBQVMsRUFBRTtBQUNUQyxVQUFBQSxPQUFPLEVBQUU7QUFEQSxTQUpMO0FBT05DLFFBQUFBLEtBQUssRUFBRTtBQUNMQyxVQUFBQSxhQUFhLEVBQUU7QUFEVjtBQVBELE9BQUQsQ0FERDtBQVlOQyxNQUFBQSxLQUFLLEVBQUUsQ0FBQztBQUNORixRQUFBQSxLQUFLLEVBQUU7QUFDTEcsVUFBQUEsR0FBRyxFQUFFLENBREE7QUFFTEMsVUFBQUEsR0FBRyxFQUFFLEtBRkE7QUFHTEgsVUFBQUEsYUFBYSxFQUFFO0FBSFYsU0FERDtBQU1OSCxRQUFBQSxTQUFTLEVBQUU7QUFDVEMsVUFBQUEsT0FBTyxFQUFFO0FBREE7QUFOTCxPQUFEO0FBWkQsS0FERDtBQXdCUE0sSUFBQUEsTUFBTSxFQUFFO0FBQ05OLE1BQUFBLE9BQU8sRUFBRTtBQURIO0FBeEJEO0FBWHNCLENBQWYsQ0FBbEIiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBTZXQgbmV3IGRlZmF1bHQgZm9udCBmYW1pbHkgYW5kIGZvbnQgY29sb3IgdG8gbWltaWMgQm9vdHN0cmFwJ3MgZGVmYXVsdCBzdHlsaW5nXG5DaGFydC5kZWZhdWx0cy5nbG9iYWwuZGVmYXVsdEZvbnRGYW1pbHkgPSAnLWFwcGxlLXN5c3RlbSxzeXN0ZW0tdWksQmxpbmtNYWNTeXN0ZW1Gb250LFwiU2Vnb2UgVUlcIixSb2JvdG8sXCJIZWx2ZXRpY2EgTmV1ZVwiLEFyaWFsLHNhbnMtc2VyaWYnO1xuQ2hhcnQuZGVmYXVsdHMuZ2xvYmFsLmRlZmF1bHRGb250Q29sb3IgPSAnIzI5MmIyYyc7XG5cbi8vIEJhciBDaGFydCBFeGFtcGxlXG52YXIgY3R4ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJteUJhckNoYXJ0XCIpO1xudmFyIG15TGluZUNoYXJ0ID0gbmV3IENoYXJ0KGN0eCwge1xuICB0eXBlOiAnYmFyJyxcbiAgZGF0YToge1xuICAgIGxhYmVsczogW1wiSmFudWFyeVwiLCBcIkZlYnJ1YXJ5XCIsIFwiTWFyY2hcIiwgXCJBcHJpbFwiLCBcIk1heVwiLCBcIkp1bmVcIl0sXG4gICAgZGF0YXNldHM6IFt7XG4gICAgICBsYWJlbDogXCJSZXZlbnVlXCIsXG4gICAgICBiYWNrZ3JvdW5kQ29sb3I6IFwicmdiYSgyLDExNywyMTYsMSlcIixcbiAgICAgIGJvcmRlckNvbG9yOiBcInJnYmEoMiwxMTcsMjE2LDEpXCIsXG4gICAgICBkYXRhOiBbNDIxNSwgNTMxMiwgNjI1MSwgNzg0MSwgOTgyMSwgMTQ5ODRdLFxuICAgIH1dLFxuICB9LFxuICBvcHRpb25zOiB7XG4gICAgc2NhbGVzOiB7XG4gICAgICB4QXhlczogW3tcbiAgICAgICAgdGltZToge1xuICAgICAgICAgIHVuaXQ6ICdtb250aCdcbiAgICAgICAgfSxcbiAgICAgICAgZ3JpZExpbmVzOiB7XG4gICAgICAgICAgZGlzcGxheTogZmFsc2VcbiAgICAgICAgfSxcbiAgICAgICAgdGlja3M6IHtcbiAgICAgICAgICBtYXhUaWNrc0xpbWl0OiA2XG4gICAgICAgIH1cbiAgICAgIH1dLFxuICAgICAgeUF4ZXM6IFt7XG4gICAgICAgIHRpY2tzOiB7XG4gICAgICAgICAgbWluOiAwLFxuICAgICAgICAgIG1heDogMTUwMDAsXG4gICAgICAgICAgbWF4VGlja3NMaW1pdDogNVxuICAgICAgICB9LFxuICAgICAgICBncmlkTGluZXM6IHtcbiAgICAgICAgICBkaXNwbGF5OiB0cnVlXG4gICAgICAgIH1cbiAgICAgIH1dLFxuICAgIH0sXG4gICAgbGVnZW5kOiB7XG4gICAgICBkaXNwbGF5OiBmYWxzZVxuICAgIH1cbiAgfVxufSk7XG4iXSwiZmlsZSI6Ii4vcmVzb3VyY2VzL2pzL2FkbWluL2RlbW8vY2hhcnQtYmFyLWRlbW8uanMuanMiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/js/admin/demo/chart-bar-demo.js\n");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./resources/js/admin/demo/chart-bar-demo.js"]();
+/******/ 	
+/******/ })()
+;
