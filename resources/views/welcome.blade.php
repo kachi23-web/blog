@@ -16,7 +16,7 @@ $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $c
 
 @section('content')
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url({{ asset('img/home-bg.jpg')}})">
+  <header class="masthead" style="background-image: url({{ asset('/storage/img/home-bg.jpg')}})">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
