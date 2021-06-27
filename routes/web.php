@@ -33,7 +33,7 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('/contact');
 });
-Auth::routes();
+//Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home/{id}', [HomeController::class, 'show']);
