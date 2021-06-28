@@ -30,7 +30,7 @@
 <body>
 
   @if(!\Request::is('login')&& !\Request::is('register'))
-    @include('/partial.navbar')
+    @include('partial.navbar')
   @endif
 
   @yield('content')
