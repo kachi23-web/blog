@@ -22,8 +22,8 @@ $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $c
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>Clean Blog</h1>
-            <span class="subheading">A Blog for Lomek</span>
+            <h1>Kobi Blog</h1>
+            <span class="subheading"></span>
           </div>
         </div>
       </div>
